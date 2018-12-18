@@ -54,9 +54,9 @@ namespace IntelligentScissors
             using (StreamWriter writer = new StreamWriter("output1.txt"))
             {
                 writer.Write("this is the distance");
-                for (int i = 0; i < h; ++i)
+                for (int i = 0; i < w; ++i)
                 {
-                    for (int j = 0; j < w; ++j)
+                    for (int j = 0; j < h; ++j)
                     {
                         writer.Write(g[i, j]);
                         writer.Write(" ");
@@ -64,9 +64,10 @@ namespace IntelligentScissors
                     }
                     writer.WriteLine(" ");
                 }
-                for (int i = 0; i < 5; ++i)
+                writer.WriteLine("\n");
+                for (int i = 0; i < w; ++i)
                 {
-                    for (int j = 0; j < 5; ++j)
+                    for (int j = 0; j < h; ++j)
                     {
                         writer.Write(dist[i, j]);
                         writer.Write(" ");
@@ -74,6 +75,7 @@ namespace IntelligentScissors
                     }
                     writer.WriteLine(" ");
                 }
+                writer.WriteLine("\n");
             }
         }
 

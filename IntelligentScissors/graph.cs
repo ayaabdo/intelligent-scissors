@@ -62,7 +62,7 @@ namespace IntelligentScissors
                 for (int j = 0; j < width; ++j)
                     dis[i, j] = int.MaxValue;
             }
-            PriorityQueue pq = new PriorityQueue(1,2,0.0);
+            PriorityQueue pq = new PriorityQueue(x,y,0.0);
              dis[x,y] = 0;
              while (!pq.Empty())
              {
@@ -74,7 +74,7 @@ namespace IntelligentScissors
                 if (d > dis[xx, yy]) continue;
 
                 //get neighbours
-                 if (valid(xx+1,yy)&&dis[xx+1,yy] > d + graph[xx+1,yy] )
+                if (valid(xx + 1, yy) && dis[xx + 1, yy] > d + graph[xx + 1, yy]) 
                  {
                      dis[xx + 1, yy] = d + graph[xx + 1, yy];
                         pq.push(xx+1,yy,dis[xx+1,yy]);
