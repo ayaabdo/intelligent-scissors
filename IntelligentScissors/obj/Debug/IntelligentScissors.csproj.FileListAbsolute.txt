@@ -16,7 +16,6 @@ E:\College\Materials\Algo\IntelligentScissors\IntelligentScissors\obj\Debug\Inte
 E:\College\Materials\Algo\IntelligentScissors\IntelligentScissors\obj\Debug\IntelligentScissors.csprojAssemblyReference.cache
 C:\Users\aya abdo\OneDrive\Desktop\intelligent-scissors-master\IntelligentScissors\bin\Debug\IntelligentScissors.exe
 C:\Users\aya abdo\OneDrive\Desktop\intelligent-scissors-master\IntelligentScissors\bin\Debug\IntelligentScissors.pdb
-C:\Users\aya abdo\OneDrive\Desktop\intelligent-scissors-master\IntelligentScissors\obj\Debug\IntelligentScissors.csprojResolveAssemblyReference.cache
 C:\Users\aya abdo\OneDrive\Desktop\intelligent-scissors-master\IntelligentScissors\obj\Debug\IntelligentScissors.MainForm.resources
 C:\Users\aya abdo\OneDrive\Desktop\intelligent-scissors-master\IntelligentScissors\obj\Debug\IntelligentScissors.Properties.Resources.resources
 C:\Users\aya abdo\OneDrive\Desktop\intelligent-scissors-master\IntelligentScissors\obj\Debug\IntelligentScissors.csproj.GenerateResource.Cache

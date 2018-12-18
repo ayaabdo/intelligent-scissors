@@ -30,9 +30,9 @@ namespace IntelligentScissors
 
             txtWidth.Text = ImageOperations.GetWidth(ImageMatrix).ToString();
             txtHeight.Text = ImageOperations.GetHeight(ImageMatrix).ToString();
-            double[,] read = new double[10, 10];
             int w = ImageOperations.GetWidth(ImageMatrix);
             int h = ImageOperations.GetHeight(ImageMatrix);
+            double[,] read = new double[h, w];
             read = graph_.calculateWeights(ImageMatrix);
             saving_constructed_graph(read, h, w);
             saving_distance();
