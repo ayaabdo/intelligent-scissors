@@ -50,7 +50,7 @@ namespace IntelligentScissors
 
             }
 
-            double[,] dist = graph_.Dijkstra(g, 0, 0);
+            //double[,] dist = graph_.Dijkstra(g, 0, 0);
             using (StreamWriter writer = new StreamWriter("output1.txt"))
             {
                 writer.Write("this is the distance");
@@ -65,17 +65,17 @@ namespace IntelligentScissors
                     writer.WriteLine(" ");
                 }
                 writer.WriteLine("\n");
-                for (int i = 0; i < w; ++i)
-                {
-                    for (int j = 0; j < h; ++j)
-                    {
-                        writer.Write(dist[i, j]);
-                        writer.Write(" ");
+                //for (int i = 0; i < w; ++i)
+                //{
+                //    for (int j = 0; j < h; ++j)
+                //    {
+                //        writer.Write(dist[i, j]);
+                //        writer.Write(" ");
 
-                    }
-                    writer.WriteLine(" ");
-                }
-                writer.WriteLine("\n");
+                //    }
+                //    writer.WriteLine(" ");
+                //}
+                //writer.WriteLine("\n");
             }
         }
 
@@ -85,7 +85,7 @@ namespace IntelligentScissors
             energy = graph_.calculateWeights(ImageMatrix);
 
             MouseEventArgs me = (MouseEventArgs)e;
-            graph_.Dijkstra(energy, me.X, me.Y);
+           // graph_.Dijkstra(energy, me.X, me.Y);
             ImageOperations.DisplayImage(ImageMatrix, pictureBox2);
         }
 
@@ -509,10 +509,11 @@ namespace IntelligentScissors
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            // MouseEventArgs mouse = (MouseEventArgs)e;
+             MouseEventArgs mouse = (MouseEventArgs)e;
+            
             if (pictureBox1.Image != null)
             {
-                //List<int> dis = graph_.Dijkstra(ImageMatrix, 1, 2);
+               // List<int> dis = graph_.Dijkstra(, mouse.X, mouse.Y);
 
             }
         }
