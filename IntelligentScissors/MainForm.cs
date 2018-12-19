@@ -478,7 +478,7 @@ namespace IntelligentScissors
             for (int i = 0; i < Pt1.Count; i++)
             {
                 // Draw the segment.
-                e.Graphics.DrawLine(Pens.Blue, Pt1[i], Pt2[i]);
+                e.Graphics.DrawLine(Pens.Yellow, Pt1[i], Pt2[i]);
             }
 
             // Draw the end points.
@@ -487,7 +487,7 @@ namespace IntelligentScissors
                 Rectangle rect = new Rectangle(
                     pt.X - object_radius, pt.Y - object_radius,
                     2 * object_radius + 1, 2 * object_radius + 1);
-                e.Graphics.FillEllipse(Brushes.White, rect);
+                e.Graphics.FillEllipse(Brushes.Red, rect);
                 e.Graphics.DrawEllipse(Pens.Black, rect);
             }
             foreach (Point pt in Pt2)
@@ -495,7 +495,7 @@ namespace IntelligentScissors
                 Rectangle rect = new Rectangle(
                     pt.X - object_radius, pt.Y - object_radius,
                     2 * object_radius + 1, 2 * object_radius + 1);
-                e.Graphics.FillEllipse(Brushes.White, rect);
+                e.Graphics.FillEllipse(Brushes.Red, rect);
                 e.Graphics.DrawEllipse(Pens.Black, rect);
             }
 
