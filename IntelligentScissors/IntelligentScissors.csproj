@@ -44,7 +44,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="anchor.cs" />
+=======
+>>>>>>> 85698e9a01fdada32ad0384f8855c35581873685
     <Compile Include="graph.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>

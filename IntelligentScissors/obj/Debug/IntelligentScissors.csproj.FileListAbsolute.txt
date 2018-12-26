@@ -14,3 +14,13 @@ E:\College\Materials\Algo\IntelligentScissors\IntelligentScissors\obj\Debug\Inte
 E:\College\Materials\Algo\IntelligentScissors\IntelligentScissors\obj\Debug\IntelligentScissors.exe
 E:\College\Materials\Algo\IntelligentScissors\IntelligentScissors\obj\Debug\IntelligentScissors.pdb
 E:\College\Materials\Algo\IntelligentScissors\IntelligentScissors\obj\Debug\IntelligentScissors.csprojAssemblyReference.cache
+<<<<<<< HEAD
+=======
+C:\Users\aya abdo\OneDrive\Desktop\intelligent-scissors-master\IntelligentScissors\bin\Debug\IntelligentScissors.exe
+C:\Users\aya abdo\OneDrive\Desktop\intelligent-scissors-master\IntelligentScissors\bin\Debug\IntelligentScissors.pdb
+C:\Users\aya abdo\OneDrive\Desktop\intelligent-scissors-master\IntelligentScissors\obj\Debug\IntelligentScissors.MainForm.resources
+C:\Users\aya abdo\OneDrive\Desktop\intelligent-scissors-master\IntelligentScissors\obj\Debug\IntelligentScissors.Properties.Resources.resources
+C:\Users\aya abdo\OneDrive\Desktop\intelligent-scissors-master\IntelligentScissors\obj\Debug\IntelligentScissors.csproj.GenerateResource.Cache
+C:\Users\aya abdo\OneDrive\Desktop\intelligent-scissors-master\IntelligentScissors\obj\Debug\IntelligentScissors.exe
+C:\Users\aya abdo\OneDrive\Desktop\intelligent-scissors-master\IntelligentScissors\obj\Debug\IntelligentScissors.pdb
+>>>>>>> 85698e9a01fdada32ad0384f8855c35581873685

@@ -34,17 +34,29 @@ namespace IntelligentScissors
         }
 
     }
+<<<<<<< HEAD
     class elPriorityQueuebta3khadiga
+=======
+    class PriorityQueue
+>>>>>>> 85698e9a01fdada32ad0384f8855c35581873685
     {
         private Node root;
         private int Count;
 
+<<<<<<< HEAD
         public elPriorityQueuebta3khadiga()
+=======
+        public PriorityQueue()
+>>>>>>> 85698e9a01fdada32ad0384f8855c35581873685
         {
             root = new Node();
 
         }
+<<<<<<< HEAD
         public elPriorityQueuebta3khadiga(int xx, int yy, double w)
+=======
+        public PriorityQueue(int xx, int yy, double w)
+>>>>>>> 85698e9a01fdada32ad0384f8855c35581873685
         {
             root = new Node(xx, yy, w);
             Count++;
@@ -104,18 +116,31 @@ namespace IntelligentScissors
         {
             return Count == 0;
         }
+<<<<<<< HEAD
         private void e3redly_kol_7aga_yabnlkalb(Node dod)
+=======
+        private void e3redly_kol_7aga(Node dod)
+>>>>>>> 85698e9a01fdada32ad0384f8855c35581873685
         {
             if (dod == null) return;
             //if(dod.nullflag==false)
             Console.WriteLine(dod.weight + " " + dod.nullflag + " ");
+<<<<<<< HEAD
             e3redly_kol_7aga_yabnlkalb(dod.left);
             e3redly_kol_7aga_yabnlkalb(dod.right);
+=======
+            e3redly_kol_7aga(dod.left);
+            e3redly_kol_7aga(dod.right);
+>>>>>>> 85698e9a01fdada32ad0384f8855c35581873685
 
         }
         public void show()
         {
+<<<<<<< HEAD
             e3redly_kol_7aga_yabnlkalb(root);
+=======
+            e3redly_kol_7aga(root);
+>>>>>>> 85698e9a01fdada32ad0384f8855c35581873685
         }
         public Node Top()
         {

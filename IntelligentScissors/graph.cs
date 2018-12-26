@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
+<<<<<<< HEAD
 
 namespace IntelligentScissors
 {
@@ -105,11 +106,48 @@ namespace IntelligentScissors
             //MessageBox.Show(e.Y.ToString());
 
             return weights;
+=======
+namespace IntelligentScissors
+{
+    public  class graph_
+    {       
+        public static double [,] calculateWeights(RGBPixel[,]  ImageMatrix)
+        {
+            int height = ImageOperations.GetHeight(ImageMatrix);
+            int width = ImageOperations.GetWidth(ImageMatrix);
+            double[,] energy = new double[1000, 1000];
+
+            for (int y = 0; y < width ; y++)
+            {
+                for (int x = 0; x < height ; x++)
+                {
+                    var e = ImageOperations.CalculatePixelEnergies(y, x, ImageMatrix);
+                    if (e.X == 0)
+                        energy[y + 1, x] = 10000000000000000;
+                    else
+                    {
+                        if (y + 1 < width) 
+                        energy[y + 1, x] = 1 / e.X;
+                    }
+                    if (e.Y == 0)
+                        energy[y, x + 1] = 10000000000000000;
+                    else
+                    {                   
+                        if(x + 1 < height)
+                        energy[y, x + 1] = 1 / e.Y;
+                    }
+                    //MessageBox.Show(e.X.ToString() + " " + e.Y.ToString() + "\n");
+                    //MessageBox.Show(energy[y + 1, x].ToString() + " " + energy[y, x + 1].ToString());
+                }
+            }
+            return energy;
+>>>>>>> 85698e9a01fdada32ad0384f8855c35581873685
         }
 
         const int N = (1 << 22), M = (1 << 18), OO = 0x3f3f3f3f;
 
         List<Pair<int, int>> adj = new List<Pair<int, int>>(N);
+<<<<<<< HEAD
         public static bool valid(int y, int x, int h, int w)
         {
             if (x >= 0 && y >= 0 && y < h && x < w) return true;
@@ -129,6 +167,29 @@ namespace IntelligentScissors
             elPriorityQueuebta3khadiga pq = new elPriorityQueuebta3khadiga(x, y, 0.0);
             dis[y, x] = 0;
 
+=======
+        public static bool valid ( int x, int y)
+        {
+            RGBPixel[,] ImageMatrix = new RGBPixel[10000, 10000];
+            int height = ImageOperations.GetHeight(ImageMatrix);
+            int width = ImageOperations.GetWidth(ImageMatrix);
+
+            if (x >= 0 && y >= 0 && x < height && y < width) return true;
+            return false;
+        }
+         public static double[,] Dijkstra(double [,] graph,int x , int y, int destinationX, int destinationY, int[,] fromx, int[,] fromy)
+        {
+            double[,] dis = new double[1000, 1000];
+            // int[,] fromx = new int[1000, 1000];
+            //int[,] fromy = new int[1000, 1000];
+            for (int i = 0; i < 5; ++i)
+            {
+                for (int j = 0; j < 5; ++j)
+                    dis[i, j] = int.MaxValue;
+            }
+            PriorityQueue pq = new PriorityQueue(x,y,0.0);
+            dis[x, y] = 0;
+>>>>>>> 85698e9a01fdada32ad0384f8855c35581873685
             while (!pq.Empty())
             {
                 double d = pq.Top().weight;
@@ -136,6 +197,7 @@ namespace IntelligentScissors
                 int yy = pq.Top().qy.Peek();
                 pq.Pop();
 
+<<<<<<< HEAD
                 if (d > dis[yy, xx]) continue;
                 if (valid(yy + 1, xx, h, w) && dis[yy + 1, xx] > d + graph[yy, xx].down && graph[yy, xx].down != -1)
                 {
@@ -144,10 +206,20 @@ namespace IntelligentScissors
                     fromy[yy + 1, xx] = yy;
                     //MessageBox.Show(fromx[yy+1, xx].ToString() + " down " + fromy[yy+1, xx].ToString());
                     if (xx == destinationX && yy + 1 == destinationY)
+=======
+                if (d > dis[xx, yy]) continue;
+                if (valid(xx + 1, yy) && dis[xx + 1, yy] > d + graph[xx + 1, yy])
+                {
+                    dis[xx + 1, yy] = d + graph[xx + 1, yy];
+                    fromx[xx + 1, yy] = xx;
+                    fromy[xx + 1, yy] = yy;
+                    if (xx + 1 == destinationX && yy == destinationY)
+>>>>>>> 85698e9a01fdada32ad0384f8855c35581873685
                     {
                         pq = null;
                         return dis;
                     }
+<<<<<<< HEAD
                     pq.push(xx, yy + 1, dis[yy + 1, xx]);
                 }
 
@@ -159,11 +231,24 @@ namespace IntelligentScissors
                     fromy[yy, xx + 1] = yy;
                     //MessageBox.Show(fromx[yy, xx+1].ToString() + " right " + fromy[yy, xx+1].ToString());
                     if (xx + 1 == destinationX && yy == destinationY)
+=======
+                    pq.push(xx + 1, yy, dis[xx + 1, yy]);
+                }
+
+                if (valid(xx, yy + 1) && dis[xx, yy + 1] > d + graph[xx, yy + 1])
+                {
+                    dis[xx, yy + 1] = d + graph[xx, yy + 1];
+                    pq.push(xx, yy + 1, dis[xx, yy + 1]);
+                    fromx[xx, yy + 1] = xx;
+                    fromy[xx, yy + 1] = yy;
+                    if (xx == destinationX && yy + 1 == destinationY)
+>>>>>>> 85698e9a01fdada32ad0384f8855c35581873685
                     {
                         pq = null;
                         return dis;
                     }
                 }
+<<<<<<< HEAD
                 if (valid(yy - 1, xx, h, w) && dis[yy - 1, xx] > d + graph[yy, xx].up && graph[yy, xx].up != -1)
                 {
                     dis[yy - 1, xx] = d + graph[yy, xx].up;
@@ -172,11 +257,21 @@ namespace IntelligentScissors
                     fromy[yy - 1, xx] = yy;
                     //MessageBox.Show(fromx[yy-1, xx].ToString() + " up " + fromy[yy-1, xx].ToString());
                     if (xx == destinationX && yy - 1 == destinationY)
+=======
+                if (valid(xx - 1, yy) && dis[xx - 1, yy] > d + graph[xx - 1, yy])
+                {
+                    dis[xx - 1, yy] = d + graph[xx - 1, yy];
+                    pq.push(xx - 1, yy, dis[xx - 1, yy]);
+                    fromx[xx - 1, yy] = xx;
+                    fromy[xx - 1, yy] = yy;
+                    if (xx - 1 == destinationX && yy == destinationY)
+>>>>>>> 85698e9a01fdada32ad0384f8855c35581873685
                     {
                         pq = null;
                         return dis;
                     }
                 }
+<<<<<<< HEAD
                 if (valid(yy, xx - 1, h, w) && dis[yy, xx - 1] > d + graph[yy, xx].left && graph[yy, xx].left != -1)
                 {
                     dis[yy, xx - 1] = d + graph[yy, xx].left;
@@ -185,12 +280,22 @@ namespace IntelligentScissors
                     fromy[yy, xx - 1] = yy;
                     //MessageBox.Show(fromx[yy, xx-1].ToString() + " left " + fromy[yy, xx-1].ToString());
                     if (xx - 1 == destinationX && yy == destinationY)
+=======
+                if (valid(xx, yy - 1) && dis[xx, yy - 1] > d + graph[xx, yy - 1])
+                {
+                    dis[xx, yy - 1] = d + graph[xx, yy - 1];
+                    pq.push(xx, yy - 1, dis[xx, yy - 1]);
+                    fromx[xx, yy - 1] = xx;
+                    fromy[xx, yy - 1] = yy;
+                    if (xx == destinationX && yy - 1 == destinationY)
+>>>>>>> 85698e9a01fdada32ad0384f8855c35581873685
                     {
                         pq = null;
                         return dis;
                     }
                 }
             }
+<<<<<<< HEAD
             /**using (StreamWriter writer = new StreamWriter("output1.txt"))
             {
                //MessageBox.Show("L");
@@ -246,6 +351,15 @@ namespace IntelligentScissors
                 imageMatrix[lop[i].Y, lop[i].X].blue = 255; imageMatrix[lop[i].Y, lop[i].X].red = 255; imageMatrix[lop[i].Y, lop[i].X].green = 250;
             }
 
+=======
+            return dis;
+        }
+        public static void printpath(int x, int y, int srcx, int srcy, int[,] fromx, int[,] fromy, double[,] dis)
+        {
+            if (x == srcx && y == srcy) return;
+            MessageBox.Show(x + " " + y);
+            printpath(fromx[x, y], fromy[x, y], srcx, srcy, fromx, fromy, dis);
+>>>>>>> 85698e9a01fdada32ad0384f8855c35581873685
         }
 
     }
